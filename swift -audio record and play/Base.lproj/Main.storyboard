@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b5G-Wt-hbF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="swift__audio_record_and_play" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oyO-s5-ChV">
+                                <rect key="frame" x="107" y="244" width="200" height="408"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-xz-rzH">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Fvm-bl-HPX"/>
+                                            <constraint firstAttribute="width" constant="200" id="QWp-bp-bKq"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="record.circle" catalog="system" title="record">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="28"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="recordActn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bi6-6J-aRg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQl-ct-Pio">
+                                        <rect key="frame" x="0.0" y="208" width="200" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="GCh-ae-8Sy"/>
+                                            <constraint firstAttribute="height" constant="200" id="qRy-Ju-gOa"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="play.square" catalog="system" title="play">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="28"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="playActn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5KT-7Q-71k"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oyO-s5-ChV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dyP-wn-6xB"/>
+                            <constraint firstItem="oyO-s5-ChV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kmi-ep-CR7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="00h-Af-QL4">
+                        <barButtonItem key="rightBarButtonItem" title="save" id="hRt-eo-32o"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playBtn" destination="jQl-ct-Pio" id="8k6-zO-e5t"/>
+                        <outlet property="recordBtn" destination="iZh-xz-rzH" id="p2z-13-BMJ"/>
+                        <outlet property="saveBtn" destination="hRt-eo-32o" id="ins-fZ-9a0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="65.625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8k2-uu-0Di">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b5G-Wt-hbF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qJq-g0-WKs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ij3-nC-0ky"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DLW-44-pKa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="65.625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play.square" catalog="system" width="128" height="114"/>
+        <image name="record.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
